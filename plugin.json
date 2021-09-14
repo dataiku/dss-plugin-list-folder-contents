@@ -1,16 +1,16 @@
 {
-    "id": "your-plugin-id",
-    "version": "0.1.0",
+    "id": "folder-to-dataset",
+    "version": "1.0.0",
     "meta": {
-        "label": "Plugin template - Replace by your plugin label",
-        "category": "Your category (optional)",
-        "description": "Your description (keep it short and simple)",
-        "author": "Organization (firstName LASTNAME)",
+        "label": "Folder To Dataset",
+        "category": "",
+        "description": "Plugin recipe that takes a folder and output a dataset representing the paths to the files in the folder, and catch the names of some subdirectories.",
+        "author": "Dataiku (Jérémy PLASSMANN)",
         "icon": "icon-font-awesome-3.2.1",
         "licenseInfo": "Apache Software License",
-        "url": "https://www.dataiku.com/product/plugins/your-plugin-id/",
+        "url": "https://www.dataiku.com/product/plugins/folder-to-dataset/",
         "tags": [
-            "myTag"
+            "v1.0.0"
         ],
         "supportLevel": "NOT_SUPPORTED"
     }

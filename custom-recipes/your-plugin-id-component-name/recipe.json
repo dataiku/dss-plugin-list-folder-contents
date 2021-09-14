@@ -17,43 +17,25 @@
     // associate no dataset with the role.
     "inputRoles": [
         {
-            "name": "input_A_role",
+            "name": "input_folder",
             "label": "input A displayed name",
             "description": "what input A means",
             "arity": "UNARY",
             "required": true,
-            "acceptsDataset": true
-        },
-        {
-            "name": "input_B_role",
-            "label": "input B displayed name",
-            "description": "what input B means",
-            "arity": "NARY",
-            "required": false,
-            "acceptsDataset": true
-            // ,'mustBeSQL': true
-            // ,'mustBeStrictlyType':'HDFS'
+            "acceptsDataset": false,
+            "acceptsManagedFolder": true
         }
-        // ...
     ],
     "outputRoles": [
         {
-            "name": "main_output",
+            "name": "output_dataset",
             "label": "main output displayed name",
             "description": "what main output means",
             "arity": "UNARY",
             "required": false,
-            "acceptsDataset": true
-        },
-        {
-            "name": "errors_output",
-            "label": "errors output displayed name",
-            "description": "what errors output means",
-            "arity": "UNARY",
-            "required": false,
-            "acceptsDataset": true
+            "acceptsDataset": true,
+            "acceptsManagedFolder": false
         }
-        // ...
     ],
     /* The field "params" holds a list of all the params
        for wich the user will be prompted for values in the Settings tab of the recipe.
@@ -65,45 +47,11 @@
     */
     "params": [
         {
-            "name": "parameter1",
+            "name": "level_mapping",
             "label": "User-readable label",
-            "type": "STRING",
+            "type": "KEY_VALUE_LIST",
             "description": "Some documentation for parameter1",
             "mandatory": true
-        },
-        {
-            "name": "parameter2",
-            "label": "Parameter 2 label",
-            "type": "INT",
-            "defaultValue": 42
-            /* Note that standard json parsing will return it as a double in Python (instead of an int), so you need to write
-               int(get_recipe_config()['parameter2'])
-            */
-        },
-        // A "SELECT" parameter is a multi-choice selector. Choices are specified using the selectChoice field
-        {
-            "name": "parameter3",
-            "label": "Parameter 3 label",
-            "type": "SELECT",
-            "selectChoices": [
-                {
-                    "value": "val_x",
-                    "label": "display name for val_x"
-                },
-                {
-                    "value": "val_y",
-                    "label": "display name for val_y"
-                }
-            ]
-        },
-        // A 'COLUMN' parameter is a string, whose value is a column name from an input schema.
-        // To specify the input schema whose column names are used, use the "columnRole" field like below.
-        // The column names will come from the schema of the first dataset associated to that role.
-        {
-            "name": "parameter4",
-            "label": "Parameter 4 label",
-            "type": "COLUMN",
-            "columnRole": "input_B_role"
         }
         // The 'COLUMNS' type works in the same way, except that it is a list of strings.
     ],
