@@ -3,13 +3,14 @@
     // Meta data for display purposes
     "meta": {
         // label: name of the recipe as displayed, should be short
-        "label": "Your recipe label",
+        "label": "Folder To Dataset",
         // description: longer string to help end users understand what this recipe does
-        "description": "Your recipe description",
+        "description": "Recipe designed to get the paths of the files located in a Folder. The subdirectories depths can be mapped to columns.",
         // icon: must be one of the FontAwesome 3.2.1 icons, complete list here at https://fontawesome.com/v3.2.1/icons/
         "icon": "icon-puzzle-piece"
     },
     "kind": "PYTHON",
+    "selectableFromFolder": "main",
     // Inputs and outputs are defined by roles. In the recipe's I/O tab, the user can associate one
     // or more dataset to each input and output role.
     // The "arity" field indicates whether the user can associate several datasets to the role ('NARY')
@@ -18,8 +19,8 @@
     "inputRoles": [
         {
             "name": "input_folder",
-            "label": "input A displayed name",
-            "description": "what input A means",
+            "label": "Input Folder",
+            "description": "Folder containing the different subdirectories and files.",
             "arity": "UNARY",
             "required": true,
             "acceptsDataset": false,
@@ -29,8 +30,8 @@
     "outputRoles": [
         {
             "name": "output_dataset",
-            "label": "main output displayed name",
-            "description": "what main output means",
+            "label": "Output Dataset",
+            "description": "Dataset where each row represent a file from the input folder.",
             "arity": "UNARY",
             "required": false,
             "acceptsDataset": true,
@@ -48,9 +49,9 @@
     "params": [
         {
             "name": "level_mapping",
-            "label": "User-readable label",
+            "label": "Level Mapping",
             "type": "KEY_VALUE_LIST",
-            "description": "Some documentation for parameter1",
+            "description": "1-indexed mapping of the level to columns. The key has to be an integer and the value a column name.",
             "mandatory": true
         }
         // The 'COLUMNS' type works in the same way, except that it is a list of strings.
