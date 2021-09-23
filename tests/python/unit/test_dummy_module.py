@@ -29,9 +29,8 @@ def test_get_level_mapping_exception():
 def test_compute_columns_from_path_1():
     param = [{"from": "1", "to": "Chat"}, {"from": "2", "to": "Chien"}]
     mapping = get_level_mapping(param)
-    path = "/a/b/c/chien.com"
+    path_detail = {'fullPath': "/a/b/c/chien.com", 'name': "chien.com", 'lastModified': 160000000/1000, 'size': 12345}
 
-    res = compute_columns_from_path(path, mapping)
-    expected = {"Chat": "a", "Chien": "b", "path": "/a/b/c/chien.com"}
+    res = compute_columns_from_path(path_detail, mapping)
+    expected = {"Chat": "a", "Chien": "b", "path": "/a/b/c/chien.com", "filename": 'chien', "extension": "com", "depth": 4, "last_modified": datetime.datetime.fromtimestamp(160000000/1000), "size": 12345}
     assert res == expected
-
