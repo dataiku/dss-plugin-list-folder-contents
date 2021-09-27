@@ -38,7 +38,7 @@ def test_compute_columns_from_path_1():
     res = compute_columns_from_path(path_detail, mapping)
     expected = collections.OrderedDict()
     expected["path"] = "/a/b/c/chien.com"
-    expected["filename"] = "chien"
+    expected["basename"] = "chien"
     expected["extension"] = "com"
     expected["depth"] = 4
     expected['last_modified'] = datetime.datetime.fromtimestamp(160000000 / 1000.0)
