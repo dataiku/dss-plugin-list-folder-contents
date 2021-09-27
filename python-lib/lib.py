@@ -22,7 +22,10 @@ def compute_columns_from_path(path_detail: Dict, mapping: Dict):
     res = OrderedDict()
     res["path"] = path
     filename, file_extension = os.path.splitext(path_detail["name"])
-    res["filename"] = filename
+    if path_detail["name"][-7:] == ".tar.gz":
+        filename = path_detail["name"][:-7]
+        file_extension = "tar.gz"
+    res["basename"] = filename
     res["extension"] = file_extension[1:]
     res["depth"] = len(subdirectories_file)-1
     res['last_modified'] = datetime.datetime.fromtimestamp(path_detail["lastModified"]/1000.0)
