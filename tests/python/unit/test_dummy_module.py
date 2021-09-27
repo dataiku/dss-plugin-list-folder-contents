@@ -47,3 +47,22 @@ def test_compute_columns_from_path_1():
     expected["Chien"] = "b"
 
     assert res == expected
+
+def test_tar_gz():
+    param = [{"from": "1", "to": "Chat"}, {"from": "2", "to": "Chien"}]
+    mapping = get_level_mapping(param)
+    path_detail = {'pathElts': ['', 'a', 'b', 'c', 'chien.tar.gz'], 'fullPath': "/a/b/c/chien.tar.gz", 'name': "chien.tar.gz",
+                   'lastModified': 160000000, 'size': 12345}
+
+    res = compute_columns_from_path(path_detail, mapping)
+    expected = collections.OrderedDict()
+    expected["path"] = "/a/b/c/chien.tar.gz"
+    expected["basename"] = "chien"
+    expected["extension"] = "tar.gz"
+    expected["depth"] = 4
+    expected['last_modified'] = datetime.datetime.fromtimestamp(160000000 / 1000.0)
+    expected["size"] = 12345
+    expected["Chat"] = "a"
+    expected["Chien"] = "b"
+
+    assert res == expected
