@@ -1,4 +1,7 @@
+import os
 from typing import Dict, List
+from collections import OrderedDict
+import datetime
 
 def params_validation(params):
     assert NotImplemented
@@ -13,13 +16,21 @@ def get_level_mapping(level_mapping_string: List[Dict]):
         raise ValueError("The key must be an integer. ", e)
 
 
-def compute_columns_from_path(path: str, mapping: Dict):
-    subdirectories_file = path.split('/')
-    res = {}
+def compute_columns_from_path(path_detail: Dict, mapping: Dict):
+    path = path_detail["fullPath"]
+    subdirectories_file = path_detail["pathElts"]
+    res = OrderedDict()
+    res["path"] = path
+    filename, file_extension = os.path.splitext(path_detail["name"])
+    res["filename"] = filename
+    res["extension"] = file_extension[1:]
+    res["depth"] = len(subdirectories_file)-1
+    res['last_modified'] = datetime.datetime.fromtimestamp(path_detail["lastModified"]/1000.0)
+    res["size"] = path_detail["size"]
+
     for key, value in mapping.items():
         try:
             res[value] = subdirectories_file[key]
         except IndexError:
             res[value] = ""
-    res["path"] = path
     return res
