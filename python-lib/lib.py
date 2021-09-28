@@ -3,6 +3,8 @@ from typing import Dict, List
 from collections import OrderedDict
 import datetime
 
+SPECIFIC_EXTENSION = [".tar.gz", ".tar.gz2"]
+
 def params_validation(params):
     assert NotImplemented
 
@@ -17,14 +19,16 @@ def get_level_mapping(level_mapping_string: List[Dict]):
 
 
 def compute_columns_from_path(path_detail: Dict, mapping: Dict):
+
     path = path_detail["fullPath"]
     subdirectories_file = path_detail["pathElts"]
     res = OrderedDict()
     res["path"] = path
     filename, file_extension = os.path.splitext(path_detail["name"])
-    if path_detail["name"][-7:] == ".tar.gz":
-        filename = path_detail["name"][:-7]
-        file_extension = ".tar.gz"
+    for ext in SPECIFIC_EXTENSION:
+        if path_detail["name"][-len(ext):] == ext:
+            filename = path_detail["name"][:-len(ext)]
+            file_extension = ext
     res["basename"] = filename
     res["extension"] = file_extension[1:]
     res["depth"] = len(subdirectories_file)-1
