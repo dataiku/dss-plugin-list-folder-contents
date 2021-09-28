@@ -1,5 +1,5 @@
 {
-    "id": "dss-plugin-folder-to-dataset",
+    "id": "folder-to-dataset",
     "version": "1.0.0",
     "meta": {
         "label": "Folder To Dataset",
