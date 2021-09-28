@@ -1,8 +1,8 @@
-from typing import List
+from typing import List, Dict
 import dataiku
 
 
-def generate_path_list(folder: dataiku.Folder) -> List[str]:
+def generate_path_list(folder: dataiku.Folder) -> List[Dict]:
     """Generate a dataframe of file paths in a Dataiku Folder matching a list of extensions
     Args:
         folder: Dataiku managed folder where files are stored
@@ -22,4 +22,5 @@ def generate_path_list(folder: dataiku.Folder) -> List[str]:
     else:
         path_list = folder.list_paths_in_partition()
 
-    return path_list
+
+    return [folder.get_path_details(path) for path in path_list]
