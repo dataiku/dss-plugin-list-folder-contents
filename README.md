@@ -1,4 +1,4 @@
-# Folder To Dataset Plugin
+# List Folder Contents Plugin
 
 ![Build status](https://github.com/dataiku/dss-plugin-folder-to-dataset/actions/workflows/auto-make.yml/badge.svg) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/dataiku/dss-plugin-folder-to-dataset?logo=github) ![Support level](https://img.shields.io/badge/support-Unsupported-orange)
 
