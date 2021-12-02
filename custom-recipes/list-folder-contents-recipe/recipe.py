@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-import os
-from typing import List, AnyStr, Dict
-
 import pandas as pd
 
 import dataiku
