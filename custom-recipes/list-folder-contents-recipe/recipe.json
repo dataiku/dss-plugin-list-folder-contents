@@ -10,7 +10,7 @@
         "icon": "icon-puzzle-piece"
     },
     "kind": "PYTHON",
-    "selectableFromFolder": "main",
+    "selectableFromFolder": "input_folder",
     // Inputs and outputs are defined by roles. In the recipe's I/O tab, the user can associate one
     // or more dataset to each input and output role.
     // The "arity" field indicates whether the user can associate several datasets to the role ('NARY')
@@ -51,7 +51,7 @@
             "name": "level_mapping",
             "label": "Level Mapping",
             "type": "KEY_VALUE_LIST",
-            "description": "1-indexed mapping of the levels to columns. The key has to be an integer and the value a column name. E.g. /level_1/level_2/level_3/file.ext, if we set 1: Animal we will have a new column \"Animal\" with \"level_1\" inside.",
+            "description": "1-indexed mapping of the levels to columns. The key has to be an integer and the value a column name. E.g. with the path /level_1/level_2/level_3/file.ext, if we set 1 -> Animal we will have a new column \"Animal\" with \"level_1\" inside.",
             "mandatory": true
         }
         // The 'COLUMNS' type works in the same way, except that it is a list of strings.
