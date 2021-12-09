@@ -7,12 +7,12 @@
         // description: longer string to help end users understand what this recipe does
         "description": "Recipe designed to get the paths of the files located in a Folder. The subdirectories depths can be mapped to columns.",
         // icon: must be one of the FontAwesome 3.2.1 icons, complete list here at https://fontawesome.com/v3.2.1/icons/
-        "icon": "icon-puzzle-piece"
+        "icon": "icon-dku-projects"
     },
     "kind": "PYTHON",
     "selectableFromFolder": "input_folder",
     // Inputs and outputs are defined by roles. In the recipe's I/O tab, the user can associate one
-    // or more dataset to each input and output role.
+    // or more datasets to each input and output role.
     // The "arity" field indicates whether the user can associate several datasets to the role ('NARY')
     // or at most one ('UNARY'). The "required" field indicates whether the user is allowed to
     // associate no dataset with the role.
@@ -39,12 +39,12 @@
         }
     ],
     /* The field "params" holds a list of all the params
-       for wich the user will be prompted for values in the Settings tab of the recipe.
+       for which the user will be prompted for values in the Settings tab of the recipe.
 
        The available parameter types include:
        STRING, STRINGS, INT, DOUBLE, BOOLEAN, SELECT, MULTISELECT, MAP, TEXTAREA, PRESET, COLUMN, COLUMNS
 
-       For the full list and for more details, see the documentation: https://doc.dataiku.com/dss/latest/plugins/reference/params.html
+       For the full list and more details, see the documentation: https://doc.dataiku.com/dss/latest/plugins/reference/params.html
     */
     "params": [
         {
@@ -56,7 +56,7 @@
         }
         // The 'COLUMNS' type works in the same way, except that it is a list of strings.
     ],
-    // The field "resourceKeys" holds a list of keys that allows to limit the number
+    // The field "resourceKeys" holds a list of keys that allows limiting the number
     // of concurrent executions and activities triggered by this recipe.
     //
     // Administrators can configure the limit per resource key in the Administration > Settings > Flow build

@@ -5,7 +5,7 @@
         "label": "List Folder Contents",
         "description": "Plugin recipe that takes a folder and output a dataset representing the paths to the files in the folder, and catch the names of some subdirectories.",
         "author": "Dataiku (Jérémy PLASSMANN)",
-        "icon": "icon-font-awesome-3.2.1",
+        "icon": "icon-dku-projects",
         "licenseInfo": "Apache Software License",
         "url": "https://www.dataiku.com/product/plugins/list-folder-contents/",
         "tags": [
