@@ -9,7 +9,10 @@
         "licenseInfo": "Apache Software License",
         "url": "https://www.dataiku.com/product/plugins/list-folder-contents/",
         "tags": [
-            "v1.0.0"
+            "Deep Learning",
+            "Data Preparation",
+            "Computer Vision",
+            "Labeling"
         ],
         "supportLevel": "NOT_SUPPORTED"
     }
