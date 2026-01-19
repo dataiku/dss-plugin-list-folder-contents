@@ -1,8 +1,8 @@
 {
     "id": "list-folder-contents",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "meta": {
-        "label": "List Folder Contents",
+        "label": "List Folder Contents (deprecated)",
         "description": "Plugin recipe that takes a folder and output a dataset representing the paths to the files in the folder, and catch the names of some subdirectories. ⚠️ This plugin is now \"deprecated\", we recommend using the native [list folder contents](https://doc.dataiku.com/dss/latest/other_recipes/list-folder-contents.html) feature instead.",
         "author": "Dataiku (Jérémy PLASSMANN)",
         "icon": "icon-dku-list-folder-contents icon-dku-projects",
@@ -14,6 +14,7 @@
             "Computer Vision",
             "Labeling"
         ],
-        "supportLevel": "NOT_SUPPORTED"
+        "supportLevel": "NOT_SUPPORTED",
+        "deprecated": true
     }
 }
