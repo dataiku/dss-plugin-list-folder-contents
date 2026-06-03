@@ -2,9 +2,19 @@
 
 ⚠️ This plugin is now "deprecated", we recommend using the native [list folder contents](https://doc.dataiku.com/dss/latest/other_recipes/list-folder-contents.html) feature instead.
 
-![Build status](https://github.com/dataiku/dss-plugin-folder-to-dataset/actions/workflows/auto-make.yml/badge.svg) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/dataiku/dss-plugin-folder-to-dataset?logo=github) ![Support level](https://img.shields.io/badge/support-Unsupported-orange)
-
 This Dataiku DSS plugin provides a recipe to get the paths and other information from the files in the input folder.
+
+## What the recipe outputs
+
+The recipe can produce a dataset containing file information such as:
+
+- the file path
+- the basename
+- the extension
+- the last modified date
+- the file size
+
+It can also extract directory levels from the folder hierarchy into additional output columns.
 
 ## Release notes
 
