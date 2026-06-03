@@ -4,14 +4,6 @@
 
 This Dataiku DSS plugin provides a recipe to get the paths and other information from the files in the input folder.
 
-## Why this plugin is deprecated
-
-Recent DSS versions provide the same capability natively with the **List Folder Contents** recipe.
-
-See the DSS documentation:
-
-- https://doc.dataiku.com/dss/latest/other_recipes/list-folder-contents.html
-
 ## What the recipe outputs
 
 The recipe can produce a dataset containing file information such as:
